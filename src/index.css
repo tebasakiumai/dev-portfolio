@@ -6,12 +6,12 @@
   --color-border: #2A2A3A;
 
   --color-text: #E8E6F0;
-  --color-text-muted: #8A8798;
+  --color-text-muted: #A6A3B8;   /* 変更前: #8A8798 → 少し明るく */
 
-  --color-accent: #F2478E;       /* ネオンピンク: サブアクセント(1の比率) */
-  --color-accent-dim: #B03370;   /* ピンクの暗め版 */
+  --color-accent: #ff27e9;       /* ネオンピンク: サブアクセント(1の比率) */
+  --color-accent-dim: #ff27e9;   /* ピンクの暗め版 */
   --color-cyan: #14FFD1;         /* ティール: メインアクセント(2の比率) */
-  --color-cyan-dim: #0FBF9C;     /* ティールの暗め版(ホバー等) */
+  --color-cyan-dim: #14FFD1;     /* ティールの暗め版(ホバー等) */
   --color-status-done: #6BCB77;
   --color-status-wip: #E8926B;
 
@@ -43,31 +43,23 @@
 }
 
 .hero::before {
-  /* ティール: 密度高め・メイン */
   content: '';
   position: absolute;
   inset: 0;
   background-image: repeating-linear-gradient(
     115deg,
-    rgba(20, 255, 209, 0.14) 0px,
-    rgba(20, 255, 209, 0.14) 3px,
+    color-mix(in srgb, var(--color-cyan) 40%, transparent) 0px,
+    color-mix(in srgb, var(--color-cyan) 40%, transparent) 3px,
     transparent 3px,
-    transparent 40px
-  );
-  pointer-events: none;
-}
-
-.hero::after {
-  /* ピンク: 密度低め・アクセント */
-  content: '';
-  position: absolute;
-  inset: 0;
-  background-image: repeating-linear-gradient(
-    115deg,
-    rgba(242, 71, 142, 0.16) 0px,
-    rgba(242, 71, 142, 0.16) 2px,
-    transparent 2px,
-    transparent 110px
+    transparent 30px,
+    color-mix(in srgb, var(--color-cyan) 40%, transparent) 30px,
+    color-mix(in srgb, var(--color-cyan) 40%, transparent) 33px,
+    transparent 33px,
+    transparent 60px,
+    color-mix(in srgb, var(--color-accent) 40%, transparent) 60px,
+    color-mix(in srgb, var(--color-accent) 40%, transparent) 63px,
+    transparent 63px,
+    transparent 90px
   );
   pointer-events: none;
 }
@@ -325,4 +317,83 @@ code, .mono {
 
 .back-link:hover {
   text-decoration: underline;
+}
+
+.about-section {
+  padding: var(--space-lg) var(--space-md);
+}
+
+.about-section h2 {
+  font-size: var(--fs-h2);
+  margin-bottom: var(--space-md);
+}
+
+.about-body {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  gap: var(--space-lg);
+}
+
+@media (max-width: 720px) {
+  .about-body {
+    grid-template-columns: 1fr;
+    gap: var(--space-md);
+  }
+}
+
+.about-bio h3 {
+  font-size: var(--fs-h3);
+}
+
+.about-role {
+  color: var(--color-cyan);
+  font-size: var(--fs-small);
+  margin: var(--space-xs) 0 var(--space-sm);
+}
+
+.about-paragraph {
+  color: var(--color-text-muted);
+  margin-bottom: var(--space-sm);
+}
+
+.about-links {
+  display: flex;
+  gap: var(--space-sm);
+  margin-top: var(--space-sm);
+}
+
+.about-links a {
+  font-family: var(--font-mono);
+  font-size: var(--fs-small);
+  color: var(--color-accent);
+}
+
+.about-links a:hover {
+  text-decoration: underline;
+}
+
+.skill-group {
+  margin-bottom: var(--space-sm);
+}
+
+.skill-category {
+  color: var(--color-text-muted);
+  font-size: var(--fs-small);
+  margin-bottom: var(--space-xs);
+}
+
+.skill-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  list-style: none;
+}
+
+.skill-list li {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--color-cyan);
+  background: color-mix(in srgb, var(--color-cyan) 12%, transparent);
+  padding: 2px 8px;
+  border-radius: var(--radius-sm);
 }

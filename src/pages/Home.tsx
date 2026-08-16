@@ -1,5 +1,6 @@
 import ProjectsSection from '../components/ProjectsSection'
 import NotesSection from '../components/NotesSection'
+import AboutSection from '../components/AboutSection'
 
 function Home() {
   return (
@@ -18,6 +19,7 @@ function Home() {
 
       <ProjectsSection />
       <NotesSection />
+      <AboutSection />
     </div>
   )
 }
