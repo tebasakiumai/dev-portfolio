@@ -1,20 +1,4 @@
 :root {
-  /* === Color: Cyber Build Log Theme === */
-  --color-bg: #0B0E1A;
-  --color-surface: #181822;
-  --color-surface-hover: #202030;
-  --color-border: #2A2A3A;
-
-  --color-text: #E8E6F0;
-  --color-text-muted: #A6A3B8;   /* 変更前: #8A8798 → 少し明るく */
-
-  --color-accent: #ff27e9;       /* ネオンピンク: サブアクセント(1の比率) */
-  --color-accent-dim: #ff27e9;   /* ピンクの暗め版 */
-  --color-cyan: #14FFD1;         /* ティール: メインアクセント(2の比率) */
-  --color-cyan-dim: #14FFD1;     /* ティールの暗め版(ホバー等) */
-  --color-status-done: #6BCB77;
-  --color-status-wip: #E8926B;
-
   /* 以下は変更なし */
   --font-display: 'JetBrains Mono', monospace;
   --font-body: 'IBM Plex Sans JP', sans-serif;
@@ -34,6 +18,42 @@
 
   --radius-sm: 4px;
   --radius-md: 8px;
+}
+
+[data-theme='dark'] {
+  --color-bg: #0B0E1A;
+  --color-surface: #181822;
+  --color-surface-hover: #202030;
+  --color-border: #2A2A3A;
+
+  --color-text: #E8E6F0;
+  --color-text-muted: #A6A3B8;
+
+  --color-accent: #FF1F7A;
+  --color-accent-dim: #C4165F;
+  --color-cyan: #00FFC2;
+  --color-cyan-dim: #00BF92;
+
+  --color-status-done: #6BCB77;
+  --color-status-wip: #E8926B;
+}
+
+[data-theme='light'] {
+  --color-bg: #F7F7FA;
+  --color-surface: #FFFFFF;
+  --color-surface-hover: #EFEFF4;
+  --color-border: #DADAE2;
+
+  --color-text: #1A1A24;
+  --color-text-muted: #5C5A6B;
+
+  --color-accent: #E0116E;
+  --color-accent-dim: #B00D58;
+  --color-cyan: #00A88A;
+  --color-cyan-dim: #007A64;
+
+  --color-status-done: #2F9E44;
+  --color-status-wip: #D9682C;
 }
 
 .hero {
@@ -97,6 +117,7 @@ body {
   font-size: var(--fs-body);
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
+  transition: background-color 0.2s ease, color 0.2s ease; /* この行を追加 */
 }
 
 h1, h2, h3 {
@@ -396,4 +417,64 @@ code, .mono {
   background: color-mix(in srgb, var(--color-cyan) 12%, transparent);
   padding: 2px 8px;
   border-radius: var(--radius-sm);
+}
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--space-sm) var(--space-md);
+  background: color-mix(in srgb, var(--color-bg) 85%, transparent);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.site-logo {
+  color: var(--color-text);
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.site-nav {
+  display: flex;
+  gap: var(--space-md);
+}
+
+.nav-link {
+  background: none;
+  border: none;
+  color: var(--color-text-muted);
+  font-size: var(--fs-small);
+  cursor: pointer;
+  padding: 0;
+  transition: color 0.2s ease;
+}
+
+.nav-link:hover {
+  color: var(--color-cyan);
+}
+
+.site-header-right {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+}
+
+.theme-toggle {
+  background: none;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  color: var(--color-text-muted);
+  font-size: var(--fs-small);
+  padding: 4px 10px;
+  cursor: pointer;
+  transition: border-color 0.2s ease, color 0.2s ease;
+}
+
+.theme-toggle:hover {
+  border-color: var(--color-cyan);
+  color: var(--color-cyan);
 }

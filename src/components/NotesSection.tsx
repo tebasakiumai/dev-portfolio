@@ -3,7 +3,7 @@ import NoteEntry from './NoteEntry'
 
 function NotesSection() {
   return (
-    <section className="notes-section">
+    <section className="notes-section" id="notes">
       <p className="mono section-eyebrow">$ git log --oneline</p>
       <h2>技術記録</h2>
 

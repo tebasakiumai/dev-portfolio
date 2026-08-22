@@ -1,8 +1,19 @@
+import { useEffect } from 'react'
+import { useLocation } from 'react-router-dom'
 import ProjectsSection from '../components/ProjectsSection'
 import NotesSection from '../components/NotesSection'
 import AboutSection from '../components/AboutSection'
 
 function Home() {
+  const location = useLocation()
+
+  useEffect(() => {
+    const state = location.state as { scrollTo?: string } | null
+    if (state?.scrollTo) {
+      document.getElementById(state.scrollTo)?.scrollIntoView({ behavior: 'smooth' })
+    }
+  }, [location])
+
   return (
     <div>
       <section className="hero">
