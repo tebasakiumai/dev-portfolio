@@ -3,7 +3,6 @@ import { profile } from '../data/profile'
 function AboutSection() {
   return (
     <section className="about-section" id="about">
-      <p className="mono section-eyebrow">$ cat ./about.md</p>
       <h2>About</h2>
 
       <div className="about-body">
