@@ -17,9 +17,6 @@ function Home() {
   return (
     <div>
       <section className="hero">
-        <p className="mono" style={{ color: 'var(--color-text-muted)', fontSize: '0.85rem' }}>
-          $ whoami
-        </p>
         <h1 style={{ fontSize: 'var(--fs-hero)', marginTop: '0.5rem' }}>
           Build Log
         </h1>
