@@ -36,7 +36,7 @@ export const projects: Project[] = [
     description:
       '大学生・就活生向けのデスクトップカレンダーアプリ。レイヤー管理、週次締切ダッシュボード、24時間タイムラインなど、締切管理に特化した機能を実装。',
     tech: ['Electron', 'React', 'TypeScript', 'electron-store'],
-    status: 'done',
+    status: 'wip',
     repoUrl: 'https://github.com/tebasakiumai/student-calendar-app',
   },
 ]
