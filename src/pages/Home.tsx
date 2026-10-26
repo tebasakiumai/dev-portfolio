@@ -1,7 +1,6 @@
 import { useEffect } from 'react'
 import { useLocation } from 'react-router-dom'
 import ProjectsSection from '../components/ProjectsSection'
-import NotesSection from '../components/NotesSection'
 import AboutSection from '../components/AboutSection'
 
 function Home() {
@@ -23,7 +22,6 @@ function Home() {
       </section>
 
       <ProjectsSection />
-      <NotesSection />
       <AboutSection />
     </div>
   )

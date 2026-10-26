@@ -3,7 +3,6 @@ import { useTheme } from '../hooks/useTheme'
 
 const navItems = [
   { id: 'projects', label: '制作物' },
-  { id: 'notes', label: '技術記録' },
   { id: 'about', label: 'About' },
 ]
 
