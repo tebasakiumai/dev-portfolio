@@ -1,32 +1,14 @@
-# React + TypeScript + Vite
+# Build Log
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+制作したアプリの紹介と、使用技術をまとめたポートフォリオサイトです。
 
-Currently, two official plugins are available:
+**https://tebasakiumai.github.io/dev-portfolio/**
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## 掲載内容
 
-## React Compiler
+- 制作物の一覧と詳細(競馬予測モデル、就活カレンダーアプリ)
+- 使用した言語・フレームワーク・ツール
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## 使用技術
 
-## Expanding the Oxlint configuration
-
-If you are developing a production application, we recommend enabling type-aware lint rules by installing `oxlint-tsgolint` and editing `.oxlintrc.json`:
-
-```json
-{
-  "$schema": "./node_modules/oxlint/configuration_schema.json",
-  "plugins": ["react", "typescript", "oxc"],
-  "options": {
-    "typeAware": true
-  },
-  "rules": {
-    "react/rules-of-hooks": "error",
-    "react/only-export-components": ["warn", { "allowConstantExport": true }]
-  }
-}
-```
-
-See the [Oxlint rules documentation](https://oxc.rs/docs/guide/usage/linter/rules) for the full list of rules and categories.
+React / TypeScript / Vite / GitHub Pages
